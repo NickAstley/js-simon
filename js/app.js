@@ -62,7 +62,7 @@ setTimeout(function() {
         const spanResult = document.getElementById("result");
         spanResult.innerHTML = `<li>Numeri indovinati: <span class="fw-bold">${correctNumbers}</span></li>`;
     }, 100);
-}, 3000);
+}, 30000);
 
 function generateUniqueRandomNumbers(wantedNumbers) {
     // Creo un array dove inserire i numeri
