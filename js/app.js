@@ -60,7 +60,7 @@ setTimeout(function() {
         }
         // Mostro il numero dei numeri indovinati in uno span
         const spanResult = document.getElementById("result");
-        spanResult.innerHTML = `<li>Numeri indovinati: <span class="fw-bold">${correctNumbers}</span></li>`;
+        spanResult.innerHTML = `Numeri indovinati: <span class="fw-bold">${correctNumbers}</span>`;
     }, 100);
 }, 30000);
 
