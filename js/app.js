@@ -8,13 +8,33 @@
 
 // Prendo l'ul dove inserirò i numeri casuali
 const ulRandomNumbers = document.getElementById("randomNumbers");
-// Genero i numeri casuali
+// Genero i 5 numeri casuali
 const numbersToGuess = generateUniqueRandomNumbers(5);
 // Inserisco i numeri
 for (let i = 0; i < numbersToGuess.length; i++) {
     ulRandomNumbers.innerHTML += `<li>${numbersToGuess[i]}</li>`;
 }
-
+// Creo un array dove inserirò i numeri immessi dall'utente
+const numbersGuessed = [];
+// Faccio partire il timer di 30 secondi
+setTimeout(function() {
+    // Cancello i numeri
+    ulRandomNumbers.innerHTML = "";
+    // Chiedo all'utente di indovinare i numeri
+    alert("Inserisci uno alla volta i numeri mostrati, in qualsiasi ordine.");
+    for (let i = 0; i < 5; i++) {
+        // Prendo l'input dell'utente
+        const guess = parseInt(prompt(`Inserisci il ${i + 1}° numero:`));
+        // Controllo che sia un numero e lo inserisco nell'array
+        if (!isNaN(guess)) {
+            numbersGuessed[i] = guess;
+        } else {
+            i--;
+            alert("Prova ad inserire un numero!");
+        }
+    }
+    console.log(numbersGuessed);
+}, 3000);
 
 function generateUniqueRandomNumbers(wantedNumbers) {
     // Creo un array dove inserire i numeri
